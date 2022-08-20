@@ -12,16 +12,18 @@ jobs_links = main_soup.find(id="positions").find_all("a")
 contract_types = ["TPP", "živnosť", "dohoda", "skrátený úväzok"]
 result = []
 for job_link in jobs_links:
+    job_place = ""
+    job_salary = ''
+    contract_type_str = ''
+    contact_email = ''
+
     job_page = requests.get("https://www.hyperia.sk" + job_link["href"])
     job_soup = BeautifulSoup(job_page.content, "html.parser")
 
     jobs_inf = job_soup.find(id="__nuxt").find_all("p")
 
     job_title = job_soup.find(id="__nuxt").find("h1").text
-    job_place = ""
-    job_salary = ''
-    contract_type_str = ''
-    contact_email = ''
+
     for job_inf in jobs_inf:
         ji_t = job_inf.text
 
