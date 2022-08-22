@@ -15,7 +15,7 @@ def get_jobs_links():
     return jobs_links
 
 
-def get_job_description(job_link):
+def get_job_detail(job_link):
     job_page = requests.get("https://www.hyperia.sk" + job_link["href"])
     job_soup = BeautifulSoup(job_page.content, "html.parser")
 
