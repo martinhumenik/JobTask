@@ -22,7 +22,7 @@ def get_job_description(job_link):
     return job_soup
 
 
-def parse_text(ji_t, job):
+def parse_job_informations(ji_t, job):
     if "Miesto výkonu práce:" in ji_t:
         job.set_place(ji_t.split(":")[-1])
 
