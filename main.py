@@ -16,6 +16,6 @@ for job_link in jobs_links:
     for job_inf in jobs_inf:
         job = parse_job_informations(job_inf.text, job)
 
-    result.append(job.to_json())
+    result.append(job.to_dict())
 
 print(result)

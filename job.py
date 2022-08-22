@@ -1,6 +1,3 @@
-import json
-
-
 class Job:
     def __init__(self):
         self.title = None
@@ -12,5 +9,5 @@ class Job:
     def set_attribute(self, name, value):
         setattr(self, name, value)
 
-    def to_json(self):
-        return json.dumps(vars(self), ensure_ascii=False)
+    def to_dict(self):
+        return self.__dict__
