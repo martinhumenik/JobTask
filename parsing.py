@@ -3,7 +3,7 @@ import re
 from bs4 import BeautifulSoup
 
 URL = "https://www.hyperia.sk/kariera/"
-CONTRACT_TYPES = ["TPP", "živnosť", "dohoda", "skrátený úväzok"]
+CONTRACT_TYPES = ["TPP", "živnosť", "dohoda o brig. práci študenta", "skrátený úväzok"]
 
 
 def get_jobs_links():
