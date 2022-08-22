@@ -11,7 +11,7 @@ for job_link in jobs_links:
 
     jobs_inf = job_soup.find(id="__nuxt").find_all("p")
 
-    job.set_title(job_soup.find(id="__nuxt").find("h1").text)
+    job.set_attribute("title", job_soup.find(id="__nuxt").find("h1").text)
 
     for job_inf in jobs_inf:
         job = parse_job_informations(job_inf.text, job)

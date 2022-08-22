@@ -9,20 +9,8 @@ class Job:
         self.contract_type = None
         self.contact_email = None
 
-    def set_title(self, value):
-        self.title = value
-
-    def set_place(self, value):
-        self.place = value
-
-    def set_salary(self, value):
-        self.salary = value
-
-    def set_contract_type(self, value):
-        self.contract_type = value
-
-    def set_contact_email(self, value):
-        self.contact_email = value
+    def set_attribute(self, name, value):
+        setattr(self, name, value)
 
     def to_json(self):
-        return json.dumps(self.__dict__, ensure_ascii=False)
+        return json.dumps(vars(self), ensure_ascii=False)
